@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: op-gateway
+  name: op-backend
 spec:
   selector:
-    app: op-gateway
+    app: op-backend
   type: ClusterIP
   ports:
     - port: 5001

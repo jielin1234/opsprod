@@ -2,14 +2,14 @@
 
 We will be building the backend of the system first. 
 
-Create a directory for gateway and cd into it.
+Create a directory for backend and cd into it.
 
 ```
-mkdir gateway
-cd gateway
+mkdir backend
+cd backend
 ```
 
-Create a virtual env within op-gateway.
+Create a virtual env within op-backend.
 
 ```
 python3 -m venv venv
@@ -114,7 +114,7 @@ EXPOSE 5001
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5001"]
 ```
 
-Next, make a directory named `manifests`. This directory is going to contain all of the `op-gateway` service's kubernetes configuration. 
+Next, make a directory named `manifests`. This directory is going to contain all of the `op-backend` service's kubernetes configuration. 
 ```
 mkdir manifests
 ```
@@ -124,19 +124,19 @@ Change directory to manifests.
 cd manifests
 ```
 
-Create an `op-gateway-deploy.yaml` file with the below content.
+Create an `op-backend-deploy.yaml` file with the below content.
 ```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: op-gateway
+  name: op-backend
   labels:
-    app: op-gateway
+    app: op-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: op-gateway
+      app: op-backend
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -144,18 +144,18 @@ spec:
   template:
     metadata:
       labels:
-        app: op-gateway
+        app: op-backend
     spec:
       containers:
-        - name: op-gateway
-          image: kaitan8110/op-gateway
+        - name: op-backend
+          image: kaitan8110/op-backend
           ports:
             - containerPort: 5001
           envFrom:
             - configMapRef:
-                name: op-gateway-configmap
+                name: op-backend-configmap
             - secretRef:
-                name: op-gateway-secret
+                name: op-backend-secret
 ```
 
 Create a `configmap.yaml` file with the below content.
@@ -163,7 +163,7 @@ Create a `configmap.yaml` file with the below content.
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: op-gateway-configmap
+  name: op-backend-configmap
 data:
   PLACEHOLDER: "NONE"
 ```
@@ -173,7 +173,7 @@ Create a `secret.yaml` file with the below content. (Usually, we don't push this
 apiVersion: v1
 kind: Secret
 metadata:
-  name: op-gateway-secret
+  name: op-backend-secret
 stringData:
   PLACEHOLDER: "NONE"
 type: Opaque
@@ -184,10 +184,10 @@ Create a `service.yaml` file with the below content.
 apiVersion: v1
 kind: Service
 metadata:
-  name: op-gateway
+  name: op-backend
 spec:
   selector:
-    app: op-gateway
+    app: op-backend
   type: ClusterIP
   ports:
     - port: 5001
@@ -195,7 +195,7 @@ spec:
       protocol: TCP
 ```
 
-Create a `ingress.yaml` file. (To allow traffic to access our gateway endpoint)
+Create a `ingress.yaml` file. (To allow traffic to access our backend endpoint)
 ```
 vim ingress.yaml
 ```
@@ -205,7 +205,7 @@ Fill in below code. Save and exit.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: gateway-ingress
+  name: backend-ingress
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
@@ -219,7 +219,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: op-gateway
+                name: op-backend
                 port:
                   number: 5001
 ```
@@ -249,7 +249,7 @@ Basically, whenever we want to test this microservice architecture, we will need
 minikube tunnel
 ```
 
-Now that we have all our infrastructure code for our kubernetes deployment, we can actually start to deploy this `op-gateway` service to our cluster. 
+Now that we have all our infrastructure code for our kubernetes deployment, we can actually start to deploy this `op-backend` service to our cluster. 
 
 Start Docker Desktop. Then start minikube. (If you have not yet started)
 ```
@@ -277,4 +277,4 @@ kubectl apply -f ./
 ```
 
 We can see the following kubernetes resources have been created. 
-Our op-gateway service are running in minikube now.
+Our op-backend service are running in minikube now.

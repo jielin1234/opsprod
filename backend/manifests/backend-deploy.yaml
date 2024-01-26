@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: op-gateway
+  name: op-backend
   labels:
-    app: op-gateway
+    app: op-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: op-gateway
+      app: op-backend
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -16,15 +16,15 @@ spec:
   template:
     metadata:
       labels:
-        app: op-gateway
+        app: op-backend
     spec:
       containers:
-        - name: op-gateway
-          image: kaitan8110/op-gateway
+        - name: op-backend
+          image: kaitan8110/op-backend
           ports:
             - containerPort: 5001
           envFrom:
             - configMapRef:
-                name: op-gateway-configmap
+                name: op-backend-configmap
             - secretRef:
-                name: op-gateway-secret
+                name: op-backend-secret
