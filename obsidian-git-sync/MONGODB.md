@@ -1,0 +1,2 @@
+- No SQL db management system. 
+	-  For sql, 

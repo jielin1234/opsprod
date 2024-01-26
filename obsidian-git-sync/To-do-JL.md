@@ -9,5 +9,4 @@
 26 Jan:
 - Learn about FASTAPI, React, MongoDB:
 	https://www.youtube.com/watch?v=OzUzrs8uJl8
-	The demo app is build using Fast API for backend server, react for front end client, mongoD for backend db.
-	Notes for: [[FASTAPI]], [[REACT]], 
+	The demo app is build using [[FASTAPI]] for backend server, [[REACT]] for front end client, [[MONGODB]] for backend db because we need persistence.
