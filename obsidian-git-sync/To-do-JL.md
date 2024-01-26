@@ -4,4 +4,6 @@
 23 Jan:
 - Read on this reference for our usecase: 
 	https://blog.stackademic.com/advanced-end-to-end-devsecops-kubernetes-three-tier-project-using-aws-eks-argocd-prometheus-fbbfdb956d1a
-- 
+26 Jan:
+- Learn about FASTAPI, React, MongoDB:
+	https://www.youtube.com/watch?v=OzUzrs8uJl8
