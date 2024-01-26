@@ -1,0 +1,1 @@
+The demo app is build using Fast API for backend server, react for front end client, mongoD for backend db.

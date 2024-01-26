@@ -9,4 +9,4 @@
 26 Jan:
 - Learn about FASTAPI, React, MongoDB:
 	https://www.youtube.com/watch?v=OzUzrs8uJl8
-	This is for [[FASTAPI]]
+	Notes for: [[Tutorial notes]],
