@@ -1,2 +1,2 @@
-- No SQL db management system. 
-	-  For sql, 
+- A leading No SQL db management system. 
+	-  For sql, it has table that consist of different tables, with rows and column, in No SQL, it has a collection of [[documents]]. 
