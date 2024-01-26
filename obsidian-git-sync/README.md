@@ -1,7 +1,7 @@
 
 **Documentation for OpsProd Application** 
 
-Milestones for the project:
+Milestones of the project:
 - [[Milestones]]
 
 To-do lists:
