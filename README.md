@@ -286,3 +286,13 @@ Run below at the root project level to create the frontend.
 ```
 npx create-react-app frontend
 ```
+
+Create a manifests directory at root project level too. 
+```
+mkdir manifests
+```
+
+Create the below yaml file within manifests directory. 
+```
+
+```
