@@ -6,3 +6,7 @@ The frontend is going to send HTTP requests to the backend, the backend is going
 Python
 NodeJS
 MongoDB account
+
+Guides:
+Start by creating a backend server with [[FASTAPI]]
+1. Create a folder that contain both backend and frontend folders.
