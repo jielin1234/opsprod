@@ -1,0 +1,1 @@
+Uivocrn is a fast ASCII server implementation that help in the interaction between our application and the backend
