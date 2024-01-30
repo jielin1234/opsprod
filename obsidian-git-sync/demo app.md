@@ -7,7 +7,7 @@ Python
 NodeJS
 MongoDB account
 
-Guides:
+Guides/Steps:
 Start by creating a backend server with [[FASTAPI]]
 1. Create a folder that contain both backend and frontend folders.
 2. In the backend folder, create a requirements.txt which is for dependencies(Fast API, [[Uvicorn]], [[Motor]])
