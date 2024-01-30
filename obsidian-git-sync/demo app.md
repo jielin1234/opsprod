@@ -22,5 +22,5 @@ Start by creating a backend server with [[FASTAPI]]
 		- install bootstrap
 		- Run 'npm start'
 		![[Pasted image 20240130144454.png]]
-8. Proceed to edit the App.js, index.js, etc..
+8. Proceed to edit the App.js, index.js, etc and add the neccesary file
 ![[Pasted image 20240130144843.png]]
