@@ -4,3 +4,6 @@
 database acc:
 	username: jielinlow
 	pw: XTq3UzjkstQFeTF8
+
+How does MongoDB works when we want to update one item ?
+Need to have a criteria, which item do you want to update ? In our case, we want to choose by title.
