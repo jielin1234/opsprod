@@ -14,4 +14,5 @@ Start by creating a backend server with [[FASTAPI]]
 ![[Pasted image 20240130104651.png]]
 3. Create a virtual env using pipenv and install the depencies
 4.  Next, we will need 3 files([[main.py]] , [[database.py]], [[model.py]])
-5. 
+5. Once the 3 files are done, you can open the mongodb://localhost:27017 in mongoDB compass and you will see your new database because of the the [[Motor]] mongoDB driver.
+6. 
