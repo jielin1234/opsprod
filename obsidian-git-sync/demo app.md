@@ -16,4 +16,10 @@ Start by creating a backend server with [[FASTAPI]]
 4.  Next, we will need 3 files([[main.py]] , [[database.py]], [[model.py]])
 5. Once the 3 files are done, you can open the mongodb://localhost:27017 in mongoDB compass and you will see your new database because of the the [[Motor]] mongoDB driver. Test to see if the fast API backend is interacting w/ [[MONGODB]] database.
 6. Next, proceed to create the frontend site using ReactJS and make it communicate with the backend.
-7. Create 
+7. Create a folder using 'npx create-react-app frontend' command.
+		- Go into frontend folder
+		- install axios(to send request and getting back the request)
+		- install bootstrap
+		- Run 'npm start'
+		![[Pasted image 20240130144454.png]]
+8. Proceed to edit the App.js, index.js, etc.. 
