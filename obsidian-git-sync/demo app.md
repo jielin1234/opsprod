@@ -12,5 +12,6 @@ Start by creating a backend server with [[FASTAPI]]
 1. Create a folder that contain both backend and frontend folders.
 2. In the backend folder, create a requirements.txt which is for dependencies(Fast API, [[Uvicorn]], [[Motor]])
 ![[Pasted image 20240130104651.png]]
-3. Create a virtual env using pipenv and install the 
-4.  
+3. Create a virtual env using pipenv and install the depencies
+4.  Next, we will need 3 files(main.py, database.py, model.py)
+5. 
