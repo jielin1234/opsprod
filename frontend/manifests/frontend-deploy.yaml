@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: op-frontend
+  labels:
+    app: op-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: op-frontend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+  template:
+    metadata:
+      labels:
+        app: op-frontend
+    spec:
+      containers:
+        - name: op-frontend
+          image: kaitan8110/op-frontend
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: op-frontend-configmap
+            - secretRef:
+                name: op-frontend-secret

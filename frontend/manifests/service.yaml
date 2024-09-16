@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: op-frontend
+spec:
+  selector:
+    app: op-frontend
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 80  # This should be the port your container serves content on.
+      protocol: TCP

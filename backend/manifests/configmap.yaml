@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: op-backend-configmap
 data:
-  PLACEHOLDER: "NONE"
+  MONGODB_HOSTNAME: "mongodb-service"
+  MONGODB_DATABASE: "opsprod-database"

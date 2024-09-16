@@ -1,6 +1,7 @@
-# opsprod
 
-We will be building the backend of the system first. 
+We will be building the backend of the system first, followed by frontend, and then the database. 
+
+# Backend
 
 Create a directory for backend and cd into it.
 
@@ -278,3 +279,20 @@ kubectl apply -f ./
 
 We can see the following kubernetes resources have been created. 
 Our op-backend service are running in minikube now.
+
+# Frontend
+
+Run below at the root project level to create the frontend. 
+```
+npx create-react-app frontend
+```
+
+Create a manifests directory at root project level too. 
+```
+mkdir manifests
+```
+
+Create the below yaml file within manifests directory. 
+```
+
+```
